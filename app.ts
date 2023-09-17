@@ -1,7 +1,13 @@
+//Now when working with union types, like this and this,it can be cumbersome to always repeat the union type. You might want to trade a new type which reinstalls this union type. And you can do that with another cool types feature, the feature of type aliases.
+
+//Alliases - you can name whatever you want
+type Combinable = number | string;
+type ConversionDestructor = 'as-number' | 'as-text';
+
 function combine(
-  input1: number | string,
-  input2: number | string,
-  resultConversion: 'as-number' | 'as-text' //literal types
+  input1: Combinable,
+  input2: Combinable,
+  resultConversion: ConversionDestructor //literal types
 ) {
   let result: number | string;
   if (
